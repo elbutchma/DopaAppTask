@@ -7,4 +7,5 @@ target 'DopaAppTask' do
 
   # Pods for DopaAppTask
 pod 'Alamofire'
+pod 'ObjectMapper'
 end
