@@ -14,7 +14,6 @@ import SVProgressHUD
 class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var brandsTableView: UITableView!
     
-//    var brandsResponse : [BrandModel] = []
     var checkedBrands : [BrandModel] = []
     var uncheckedBrands : [BrandModel] = []
     
@@ -40,8 +39,6 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         brandsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
         callGetBrandsAPI()
-        
-        
     }
     
     func addBrandToCheckedItems(brandId: Int) {
@@ -53,6 +50,7 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let index = uncheckedBrands.index(where: { $0.brandId == model.brandId })  {
                     uncheckedBrands.remove(at: index)
                 }
+                
                 checkedBrands.append(model);
             }
         }
@@ -111,6 +109,7 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
         if section == 0 {
             return checkedBrands.count
         } else {
@@ -121,8 +120,8 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = BrandsTableViewCell.cellForTableView(tableView: tableView, atIndexPath: indexPath as NSIndexPath)
-        var brandName = ""
-        var brandImageUrl = ""
+        var brandName : String!
+        var brandImageUrl : String!
         
         if indexPath.section == 0 {
             brandName = self.checkedBrands[indexPath.row].brandName!
@@ -134,8 +133,7 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.accessoryType = .none
         }
         
-        cell.brandNameLabel.text = brandName
-        cell.brandImageView.sd_setImage(with: NSURL(string: brandImageUrl) as URL?)
+        cell.configureCell(brandName: brandName, brandImageUrl: brandImageUrl)
         
         return cell
     }

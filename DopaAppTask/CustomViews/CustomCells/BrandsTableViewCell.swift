@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BrandsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var brandImageView: UIImageView!
     @IBOutlet weak var brandNameLabel: UILabel!
     
-    func configureCell (){
-        
+    func configureCell (brandName:String, brandImageUrl:String){
+        brandNameLabel.text = brandName
+        brandImageView.sd_setImage(with: NSURL(string: brandImageUrl) as URL?)
     }
     
     class func cellForTableView(tableView: UITableView, atIndexPath indexPath: NSIndexPath) -> BrandsTableViewCell {
