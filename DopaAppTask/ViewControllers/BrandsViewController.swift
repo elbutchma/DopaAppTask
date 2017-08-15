@@ -142,4 +142,34 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             addBrandToCheckedItems(brandId: uncheckedBrands[indexPath.row].brandId!)
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectioHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
+        sectioHeaderView.backgroundColor = UIColor.gray
+        
+        let sectionHeaderTitleLabel = UILabel(frame: CGRect(x: 0, y: sectioHeaderView.frame.size.height/2, width: sectioHeaderView.frame.size.width, height: 15))
+        sectionHeaderTitleLabel.textColor = UIColor.black
+        
+        if section == 0 {
+            sectionHeaderTitleLabel.text = "Checked items"
+        } else {
+            sectionHeaderTitleLabel.text = "Unchecked items"
+        }
+        
+        sectioHeaderView.addSubview(sectionHeaderTitleLabel)
+        
+        return sectioHeaderView
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect.zero)
+    }
 }
