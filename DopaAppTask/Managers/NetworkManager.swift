@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
 
 class NetworkManager: NSObject {
     
@@ -29,7 +30,9 @@ class NetworkManager: NSObject {
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
                 
+                
                 if let jsonResponse = JSON as? [String: Any] {
+                    
                     completionHandler(jsonResponse,nil)
                 }
                 else {

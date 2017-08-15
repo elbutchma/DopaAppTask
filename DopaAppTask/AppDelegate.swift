@@ -15,7 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+//        let networkManager = NetworkManager()
+//        networkManager.fetchBrands(nil, completionHandler: { (response, error) in
+            
+//            do {
+//                let jsonData = try JSONSerialization.data(withJSONObject: response)
+//                if let json = String(data: jsonData, encoding: .utf8) {
+//                    print(json)
+//                    
+//                    let user = Mapper<GetBrandsResponseModel>().map(JSONString: json)
+//                    print ("ssasasa")
+//
+//                }
+//            } catch {
+//                print("something went wrong with parsing json")
+//            }
+//        })
         return true
     }
 

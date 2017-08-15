@@ -13,6 +13,11 @@
 		FA62845A1F3F429E00A2964C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6284591F3F429E00A2964C /* Assets.xcassets */; };
 		FA62845D1F3F429E00A2964C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA62845B1F3F429E00A2964C /* LaunchScreen.storyboard */; };
 		FAC17B481F3F49AB00D4D29B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC17B471F3F49AB00D4D29B /* NetworkManager.swift */; };
+		FAC17B4A1F3F54CB00D4D29B /* GetBrandsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC17B491F3F54CB00D4D29B /* GetBrandsResponseModel.swift */; };
+		FAC17B4C1F3F54E200D4D29B /* BrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC17B4B1F3F54E200D4D29B /* BrandModel.swift */; };
+		FAC17B531F3FAE2000D4D29B /* BrandsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC17B511F3FAE2000D4D29B /* BrandsTableViewCell.swift */; };
+		FAC17B541F3FAE2000D4D29B /* BrandsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC17B521F3FAE2000D4D29B /* BrandsTableViewCell.xib */; };
+		FAC17B561F3FAE3C00D4D29B /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC17B551F3FAE3C00D4D29B /* BrandsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		FA62845C1F3F429E00A2964C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA62845E1F3F429E00A2964C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC17B471F3F49AB00D4D29B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FAC17B491F3F54CB00D4D29B /* GetBrandsResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBrandsResponseModel.swift; sourceTree = "<group>"; };
+		FAC17B4B1F3F54E200D4D29B /* BrandModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandModel.swift; sourceTree = "<group>"; };
+		FAC17B511F3FAE2000D4D29B /* BrandsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsTableViewCell.swift; sourceTree = "<group>"; };
+		FAC17B521F3FAE2000D4D29B /* BrandsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsTableViewCell.xib; sourceTree = "<group>"; };
+		FAC17B551F3FAE3C00D4D29B /* BrandsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,7 @@
 			children = (
 				FAC17B461F3F46CE00D4D29B /* Models */,
 				FAC17B431F3F465300D4D29B /* Managers */,
+				FAC17B4F1F3FADE300D4D29B /* CustomViews */,
 				FAC17B451F3F465300D4D29B /* ViewControllers */,
 				FA6284521F3F429E00A2964C /* AppDelegate.swift */,
 				FA6284561F3F429E00A2964C /* Main.storyboard */,
@@ -101,6 +112,7 @@
 		FAC17B451F3F465300D4D29B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAC17B551F3FAE3C00D4D29B /* BrandsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,8 +120,27 @@
 		FAC17B461F3F46CE00D4D29B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAC17B491F3F54CB00D4D29B /* GetBrandsResponseModel.swift */,
+				FAC17B4B1F3F54E200D4D29B /* BrandModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FAC17B4F1F3FADE300D4D29B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAC17B501F3FADF500D4D29B /* CustomCells */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FAC17B501F3FADF500D4D29B /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				FAC17B511F3FAE2000D4D29B /* BrandsTableViewCell.swift */,
+				FAC17B521F3FAE2000D4D29B /* BrandsTableViewCell.xib */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA62845D1F3F429E00A2964C /* LaunchScreen.storyboard in Resources */,
+				FAC17B541F3FAE2000D4D29B /* BrandsTableViewCell.xib in Resources */,
 				FA62845A1F3F429E00A2964C /* Assets.xcassets in Resources */,
 				FA6284581F3F429E00A2964C /* Main.storyboard in Resources */,
 			);
@@ -236,7 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC17B481F3F49AB00D4D29B /* NetworkManager.swift in Sources */,
+				FAC17B531F3FAE2000D4D29B /* BrandsTableViewCell.swift in Sources */,
+				FAC17B4A1F3F54CB00D4D29B /* GetBrandsResponseModel.swift in Sources */,
 				FA6284531F3F429E00A2964C /* AppDelegate.swift in Sources */,
+				FAC17B561F3FAE3C00D4D29B /* BrandsViewController.swift in Sources */,
+				FAC17B4C1F3F54E200D4D29B /* BrandModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
