@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import SDWebImage
+import SVProgressHUD
 
 class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var brandsTableView: UITableView!
@@ -36,6 +37,7 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         brandsTableView.delegate = self
         brandsTableView.dataSource = self
+        brandsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
         callGetBrandsAPI()
         
@@ -77,10 +79,13 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: - API Calls
     func callGetBrandsAPI(){
+        
+        SVProgressHUD.show()
+        
         let networkManager = NetworkManager()
         networkManager.fetchBrands(nil, completionHandler: { (response, error) in
             
-            
+            SVProgressHUD.dismiss()
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: response as [String:Any]!)
                 if let json = String(data: jsonData, encoding: .utf8) {
@@ -155,7 +160,7 @@ class BrandsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let sectioHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
         sectioHeaderView.backgroundColor = UIColor.gray
         
-        let sectionHeaderTitleLabel = UILabel(frame: CGRect(x: 0, y: sectioHeaderView.frame.size.height/2, width: sectioHeaderView.frame.size.width, height: 15))
+        let sectionHeaderTitleLabel = UILabel(frame: CGRect(x: 16, y: sectioHeaderView.frame.size.height/2-5, width: sectioHeaderView.frame.size.width, height: 15))
         sectionHeaderTitleLabel.textColor = UIColor.black
         
         if section == 0 {

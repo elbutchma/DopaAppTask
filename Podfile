@@ -9,4 +9,5 @@ target 'DopaAppTask' do
 pod 'Alamofire'
 pod 'ObjectMapper'
 pod 'SDWebImage'
+pod 'SVProgressHUD'
 end
